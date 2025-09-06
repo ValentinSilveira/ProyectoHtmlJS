@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+    <div id="divCabezal" align="right">            
+            <input type="button" id="btnCerrarSesion" value="Cerrar Sesion">  
+            <input type="button" id="btnVolverImportador" value="Volver">
+            <input type="button" id="btnVolverEmpresa" value="Volver">
+            <input type="button" id="btnVolverLogin" value="Volver">    
+               
+     </div> 
+
+    <div id="divLogin">
+        <h2 align="center">Bienvenido</h2>
+        <label for="txtUsuarioLogin">Usuario:</label>
+        <input type="text" id="txtUsuarioLogin"><br>
+        <label for="txtContraseñaLogin">Contraseña:</label>
+        <input type="password" id="txtContraseñaLogin"><br>
+        <input type="button" id="btnIngresarLogin" value="Ingresar">
+        <input type="button" id="btnRegistroImportador" value="Resgistrar Importador">
+        <div id="divMsgLogin"></div>
+    </div>
+    
+    <div id="divRegistroDeImportadores">        
+        <label for="txtNombreImportador">Nombre</label>
+        <input type="text" id="txtNombreImportador"><br>
+        <label for="txtUsuarioImportador">Usuario</label>
+        <input type="text" id="txtUsuarioImportador"><br>
+        <label for="txtContraseñaImportador">Contraseña</label>
+        <input type="password" id="txtContraseñaImportador"><br>
+        <label for="txtFotoImportador">Foto</label>
+        <input type="file" id="txtFotoImportador"><br>
+        <input type="button" id="btnRegistrarImportador" value="Resgistrar"><br>
+        <div id="divMsgRegistroDeImportadores"></div>
+    </div>
+
+    <div id="divCrearSolicitud">        
+        <h2>Crear solicitud de carga</h2>
+        <label for="slcTipoDeCarga">Tipo de carga:</label>
+        <select id="slcTipoDeCarga">
+            <option value="selTipo">Seleccione tipo de carga</option>
+            <option value="General">Carga General</option>
+            <option value="Refrigerado">Refrigerado</option>
+            <option value="Peligrosa">Carga Peligrosa</option>
+        </select><br><br>
+        <label for="txtDescripcionMercaderia">Descripción:</label>
+        <input type="text" id="txtDescripcionMercaderia"><br><br>
+        <label for="slcPuertoDeOrigen">Puerto de origen:</label>
+        <select id="slcPuertoDeOrigen">
+            <option value="selPuerto">Seleccione puerto de origen</option>
+            <option value="singa">Singapur</option>
+            <option value="madryn">Madryn</option>
+            <option value="shang">Shangai</option>
+            <option value="bus">Busan</option>
+        </select><br><br>
+        <label for="slcEmpresa">Empresa:</label>
+        <select id="slcEmpresa">
+            <option value="selEmpresa">Seleccione Empresa</option>
+            <option value=1>MSC</option>
+            <option value=2>Uruguay</option>
+            <option value=3>Envios Globales</option>
+            <option value=4>Te lo llevamos</option>
+        </select><br><br>
+        <label for="txtCantContenedores">Cantidad de contenedores</label>
+        <input type="number" id="txtCantContenedores"><br><br>
+        <input type="button" id="btnCrearSolicitudViaje" value = "Crear">
+    </div>
+
+    <div id="divCrearViajesEmpresa">
+        <label for="txtNombreBuque">Nombre del buque</label>
+        <input type="text" id="txtNombreBuque"><br>
+        <label for="txtCantMaxCont">Cantidad Maxima de contendores</label>
+        <input type="number" id="txtCantMaxCont"><br>
+        <label for="txtFecha">Fecha</label>        
+        <input type="date" id="txtFecha"><br>
+        <label for="txtPuerto">Puerto</label>
+        <input type="text" id="txtPuerto"><br>
+        <input type="button" id="btnCrearViaje" value="Crear viaje">
+    </div>
+
+    <div id="divMenuEmpresa">
+        <h3 align="center">Menu Empresa</h3>
+        <input type="button" id="btnCrearViajes" value="Crear Viaje">
+        <input type="button" id="btnAsignarSolicitud" value="Asignar Solicitud">
+        <input type="button" id="btnRolloverDeCarga" value="Rollover de Carga">
+        <input type="button" id="btnManifiestoDeCarga" value="Manifiesto de Carga">
+        <input type="button" id="btnHabilitarImportador" value="Habilitar Importador">
+        <input type="button" id="btnListaDeCargaPeligrosa" value="Lista de carga peligrosa">
+
+    </div>
+
+    <div id="divMenuImportador">
+        <h3 align="center">Menu Importador</h3>
+        <input type="button" id="btnCrearSolicitud" value="Crear Solicitud">
+        <input type="button" id="btnConsultarSolicitudesPendientes" value="Cancelar / Ver Solicititudes Pendientes">
+        <input type="button" id="btnVisualizarEstadistica" value="Visualizar Informacion Estadistica">
+    </div>
+
+    <div id="divGestionUsuario">
+        <p id="msgTabla"></p>
+    </div>
+
+    <div id="divGestionEmpresa">
+        <select id="slcSeleccionarCarga"></select>    
+        <input type="button" id="btnSeleccionarCarga" value="Cargar Viaje">
+        <p id="msgEmpresa"></p>
+        <select id="slcAsignarViajes">
+            
+            </select>
+            <input type="button" id="btnAsignarViaje" value="Asignar">
+        <p id="msgViaje"></p>
+    </div>
+
+    <div id="divManifiesto">        
+        <p id="msgManifiesto"></p>
+    </div>
+
+    <div id="divCargaPeligrosa">         
+        <p id="msgCargaPeligrosa"></p>
+    </div>
+
+    <div id="divVisualizarEstadistica">
+        <h4>Porcentaje de cancelaciones:</h4>
+        <p id="msgPorcentajesCanceladas"></p><br>
+        <h4>Calendario de las próximas llegadas:</h4>
+        <p id="msgCalendario">-</p><br>
+        <h4>Participacion de las diferentes lineas de carga:</h4>
+        <p id="msgParticipacion">-</p><br>
+    </div>
+
+    <div id="divHabilitar">         
+        Ingrese Importador
+        <input type="text" id="txtidImpo">        
+        <input type = "button" id="btnHabilitar" value="Habilitar">
+        <p id="msgHabilitar"></p>
+    </div>
+
+    <div id="divRollover">
+        ingrese id Solicitud <input type="text" id="txtIdSol"><br>
+        
+        ingrese id viaje <input type="text" id="txtIdViaje"><br>
+        
+        <input type = "button" id="btnRollover" value="Mover">
+        <p id="msgRollover"></p>
+    </div>
+
+    <script src="js/miCodigo.js"></script>
+</body>
+</html>
